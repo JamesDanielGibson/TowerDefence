@@ -4,24 +4,25 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] List<Block> path;
+    [SerializeField] List<WayPoint> path;
     // Start is called before the first frame update
     void Start()
     {
-        PrintAllWayPoints();
+        StartCoroutine(FollowPath());
+        FollowPath();
+
     }
 
-    private void PrintAllWayPoints()
+    IEnumerator FollowPath()
     {
-        foreach (Block tile in path)
+        print("startingPartol");
+        foreach (WayPoint tile in path)
         {
-            print(tile.name);
+            transform.position = tile.transform.position;
+            print("visiting tile : " + tile.transform.position.x + "," + tile.transform.position.z);
+            yield return new WaitForSeconds(1f);
         }
+        print("ending");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
