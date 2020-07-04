@@ -7,10 +7,13 @@ using UnityEngine;
 [RequireComponent(typeof(WayPoint))]
 public class Editorutilities : MonoBehaviour
 {
+    
     WayPoint waypoint;
+
     void Awake()
     {
         waypoint = GetComponent<WayPoint>();
+        
     }
 
     void Update()
@@ -22,9 +25,9 @@ public class Editorutilities : MonoBehaviour
     private void SnapToGrid()
     {
         transform.position = new Vector3(
-            waypoint.GetGridPos().x, 
+            waypoint.GetGridPos().x * waypoint.GetGridSize(), 
             0f, 
-            waypoint.GetGridPos().y//uses a 2d vector so instead of xyz we only have xy, so in this case y maps to z.
+            waypoint.GetGridPos().y*waypoint.GetGridSize()//uses a 2d vector so instead of xyz we only have xy, so in this case y maps to z.
         );
     }
 
@@ -32,7 +35,7 @@ public class Editorutilities : MonoBehaviour
     {
         int gridSize = waypoint.GetGridSize();
         TextMesh textMesh = GetComponentInChildren<TextMesh>();// this looks for any child that might be the same type that you have specified.
-        string labelText = waypoint.GetGridPos().x / gridSize + "," + waypoint.GetGridPos().y / gridSize;
+        string labelText = waypoint.GetGridPos().x  + "," + waypoint.GetGridPos().y ;
         textMesh.text = labelText;
         gameObject.name = labelText;
     }

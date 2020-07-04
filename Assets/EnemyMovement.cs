@@ -10,19 +10,14 @@ public class EnemyMovement : MonoBehaviour
     {
         StartCoroutine(FollowPath());
         FollowPath();
-
     }
 
     IEnumerator FollowPath()
     {
-        print("startingPartol");
         foreach (WayPoint tile in path)
         {
             transform.position = tile.transform.position;
-            print("visiting tile : " + tile.transform.position.x + "," + tile.transform.position.z);
             yield return new WaitForSeconds(1f);
-        }
-        print("ending");
+        } 
     }
-
 }

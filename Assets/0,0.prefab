@@ -58,7 +58,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 54015a54bb9cdaf46bf75f9099c60a36, type: 2}
+  - {fileID: 2100000, guid: a21d021fa273f87468a41659177344a5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -150,7 +150,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 54015a54bb9cdaf46bf75f9099c60a36, type: 2}
+  - {fileID: 2100000, guid: a21d021fa273f87468a41659177344a5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -242,7 +242,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 54015a54bb9cdaf46bf75f9099c60a36, type: 2}
+  - {fileID: 2100000, guid: a21d021fa273f87468a41659177344a5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -335,7 +335,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 54015a54bb9cdaf46bf75f9099c60a36, type: 2}
+  - {fileID: 2100000, guid: a21d021fa273f87468a41659177344a5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -427,7 +427,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 54015a54bb9cdaf46bf75f9099c60a36, type: 2}
+  - {fileID: 2100000, guid: a21d021fa273f87468a41659177344a5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -473,7 +473,7 @@ GameObject:
   - component: {fileID: 215610798627121555}
   - component: {fileID: 114745487479935734}
   m_Layer: 0
-  m_Name: cube
+  m_Name: 0,0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -511,7 +511,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fbd87524986cc74eafd011b2e06993f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridSize: 10
 --- !u!114 &114745487479935734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -601,7 +600,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8816588765346186487}
-  m_Text: 99,99
+  m_Text: 0,0
   m_OffsetZ: 0
   m_CharacterSize: 0.02
   m_LineSpacing: 1
@@ -673,7 +672,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 54015a54bb9cdaf46bf75f9099c60a36, type: 2}
+  - {fileID: 2100000, guid: a21d021fa273f87468a41659177344a5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
