@@ -33,7 +33,6 @@ public class Editorutilities : MonoBehaviour
 
     private void UpdateLabel()
     {
-        int gridSize = waypoint.GetGridSize();
         TextMesh textMesh = GetComponentInChildren<TextMesh>();// this looks for any child that might be the same type that you have specified.
         string labelText = waypoint.GetGridPos().x  + "," + waypoint.GetGridPos().y ;
         textMesh.text = labelText;

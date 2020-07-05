@@ -6,7 +6,9 @@ public class WayPoint : MonoBehaviour
 {
     const int gridSize = 10;
     Vector2Int gridPos;
-    public bool isExplored = false;
+    [SerializeField]public bool isExplored = false;
+    [SerializeField]public WayPoint breadcrumb;
+
     public int GetGridSize()
     {
         return gridSize;
@@ -23,5 +25,10 @@ public class WayPoint : MonoBehaviour
     {
         MeshRenderer topMeshRender =  transform.Find("Top").GetComponent<MeshRenderer>();
         topMeshRender.material.color = color;
+    }
+
+    void Update()
+    {
+        
     }
 }
