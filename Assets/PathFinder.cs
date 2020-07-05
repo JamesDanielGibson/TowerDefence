@@ -23,7 +23,7 @@ public class PathFinder : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        print("script has started");
         LoadBlocks();
         ColorStartAndEnd();
         //ExploreNeighbours();
@@ -33,36 +33,37 @@ public class PathFinder : MonoBehaviour
     private void PathFind()
     {
         queue.Enqueue(startPoint);
-        while(queue.Count>0&& isRunning)
+        while(queue.Count>0 && isRunning)
         {
             var searchItem = queue.Dequeue();
-            HaltStartEqualsEnd();
+
+            searchItem.isExplored = true;
+            HaltStartEqualsEnd(searchItem);
             ExploreNeighbours(searchItem);
-            //if (!isRunning) { break; }
         }
     }
 
-    void HaltStartEqualsEnd()
+    void HaltStartEqualsEnd(WayPoint searchItem)
     {
-        if (startPoint.GetGridPos() == endPoint.GetGridPos())
+        if (searchItem == endPoint)
         {
             print("but im already here?");// todo remove this later
             isRunning = false;
         }
     }
+
     void ExploreNeighbours(WayPoint from)
     {
         if (!isRunning) { return; }
         foreach(Vector2Int direction in directions)
         {
             Vector2Int neighbourCoords = from.GetGridPos() + direction;
-            print("exploring"+ neighbourCoords);//todo remove this later
+            
             try
             {
-                WayPoint neighbour = grid[neighbourCoords];
-                neighbour.SetTopColor(Color.blue);// move to somewhere else
-                queue.Enqueue(neighbour);
-                print("queueing neighbour");
+                
+                QueueNewNeighbour(neighbourCoords);
+                print("exploring" + neighbourCoords);//todo remove this later
             }
             catch
             {
@@ -70,6 +71,18 @@ public class PathFinder : MonoBehaviour
             }
             
         }
+    }
+
+    private void QueueNewNeighbour(Vector2Int neighbourCoords)
+    {
+        WayPoint neighbour = grid[neighbourCoords];
+        
+        if (!neighbour.isExplored) {
+            neighbour.SetTopColor(Color.blue);// move to somewhere else
+            queue.Enqueue(neighbour);
+            print("queueing neighbour "+ neighbourCoords);
+        }
+        
     }
 
     private void ColorStartAndEnd()
